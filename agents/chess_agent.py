@@ -66,8 +66,8 @@ class ChessAgent:
         # Generate AI move using Stockfish (fallback: random legal move)
         ai_move = await self._get_stockfish_move(board)
         if ai_move:
-            board.push(ai_move)
             ai_move_san = board.san(ai_move)
+            board.push(ai_move)            
         else:
             ai_move_san = "No legal moves available"
 
